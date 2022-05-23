@@ -1,0 +1,4 @@
+*.dict.*
+/.vscode
+*.txt
+/__pycache__
