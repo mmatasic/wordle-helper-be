@@ -228,7 +228,7 @@ def getApiResult(lang, globs):
     results = getResults(poss, included,lang)
     suggestions = getEliminationSuggestion(poss, results, lang)
     topTip = getTopTip(results, suggestions)
-    response = SolverResponse(results, suggestions, topTip)
+    response = HelperResponse(results, suggestions, topTip)
     return response 
 
 def main():
