@@ -1,4 +1,4 @@
-from flask import Flask, json, request, jsonify
+from flask import Flask, json, request, jsonify, make_response
 from wordle_helper import getApiResult
 from model import HelperResponse
 
@@ -14,9 +14,10 @@ def getPossible():
     globs=''
   globs = globs.replace(' ', '+')
   result = getApiResult(lang, globs)
-  print(result)
   response =json.dumps(vars(result))
-
+  print(response)
+  response = make_response(jsonify(response))
+  response.headers.add("Access-Control-Allow-Origin", "*")
   return response
 
 if __name__ == '__main__':

@@ -39,6 +39,7 @@ def getGlobInput():
 
 def processGlob(poss, included, glob):
     starPlusCountByLetter = {}
+    glob = glob.lower()
     for index, item in enumerate(glob):
         #designator *,+ or -
         if index % 2!=0:
